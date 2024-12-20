@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JavaScript </title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+ <p id="demo1"> </p>
+ <p id="details"> </p>
+<script>
+//---Creating Classes---//
+	class friend{
+		constructor(name,age,year,roll,grade){
+			this.name = name;
+			this.age=age;
+			this.year=year;
+			this.roll=roll;
+			this.grade=grade;
+		}
+
+		//---Creating age method for class friend---//
+		age(){
+			let date = new Date();
+			return date.getFullYear() - this.year;
+		}
+	}
+
+	//---Object of friend class---//
+	friend1 = new friend("Bashuri",13,2011,40,6);
+	document.getElementById("demo1").innerHTML = friend1.age();
+//--Base or parent class---//
+	class Car{
+        constructor(brand){
+        	this.carname = brand;
+        }
+        mycar(){
+        	return 'I have a'+ this.carname;
+        }
+	}
+ 
+ class Model extends Car{
+ 	constructor(brand,mod) {
+ 		super(brand);
+ 		this.model = mod;
+ 	}
+ 	show(){
+ 		return this.mycar() + ',it is a'+ this.model;
+
+ 	}
+ }
+ let mycar = new Model("BMW","2.45");
+ document.getElementById("details").innerHTML = mycar.show();
+</script>
+
+</body>
+
+</html>
